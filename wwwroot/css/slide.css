@@ -1,0 +1,30 @@
+.owl-nav {
+    font-size: 30px;
+}
+
+    .owl-nav button span {
+        padding: 20px;
+    }
+
+.product .owl-dots {
+    display: flex;
+}
+
+    .product .owl-dots button {
+        outline: none;
+        border: none;
+        margin: 4px;
+        padding: 0px;
+    }
+
+        .product .owl-dots button img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+    .product .owl-dots button.active {
+        border: 1px solid #f39ac0;
+        box-shadow: 0 0 4px #f39ac0;
+        border-radius: 12px;
+        overflow:hidden;
+    }
