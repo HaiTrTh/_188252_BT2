@@ -1,0 +1,30 @@
+﻿@model _188252_BT2.Models.Product
+
+<div class="item">
+    <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@Model.Product_Id">
+        <div class="item-img">
+            <img src=@Model.Product_Img alt="">
+        </div>
+        <div class="item-wrap">
+            <h3>
+                @Model.Product_Name
+            </h3>
+            <p class="price-current">
+                @Model.ConvertNumber(@Model.Product_Price)đ
+            </p>
+            <div class="boxprice">
+                <p class="price-old">
+
+                    @Model.ConvertNumber(@Model.Product_OldPrice)đ
+
+                </p>
+                <span class="percent">
+                    - @Model.Product_DegreePercent%
+                </span>
+            </div>
+        </div>
+    </a>
+    <div class="btn-buy">
+        <p>Chọn mua</p>
+    </div>
+</div>

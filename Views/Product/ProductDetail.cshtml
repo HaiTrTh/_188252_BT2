@@ -1,454 +1,141 @@
-﻿@model List<_188252_BT2.Models.Product>
+﻿@model _188252_BT2.Models.CollectionDataModel
 
 @{
     ViewData["Title"] = "Home Page";
     Layout = "_Layout";
 }
 
+@section styleCssProduct{
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="~/js/owl.carousel.min.js" />
 
-<head>  
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<link rel="stylesheet" href="~/css/slide.css" />
+<link rel="stylesheet" href="~/css/grid.css">
+<link rel="stylesheet" href="~/css/reset.css">
+<link rel="stylesheet" href="~/css/site.css">
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
+<link rel="stylesheet" href="~/css/main.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-          integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
+}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="~/js/owl.carousel.min.js" />
-
-    <link rel="stylesheet" href="~/css/slide.css" />
-    <link rel="stylesheet" href="~/css/grid.css">
-    <link rel="stylesheet" href="~/css/reset.css">
-    <link rel="stylesheet" href="~/css/site.css">
-    <link rel="stylesheet" href="~/css/main.css">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="/css/main.css">
-       <script src=”https://code.jquery.com/jquery-1.12.4.js”></script>
+@section scriptJsProduct{
+<script src=”https://code.jquery.com/jquery-1.12.4.js”></script>
 <script src=”https://code.jquery.com/ui/1.12.1/jquery-ui.js”></script>
-</head>
+}
 
 
-<body>
-    <div class="content">
-        <div class="grid wide">
-            <ul class="nav-link-top">
-                <li>Đồ chơi</li>  &nbsp; > &nbsp;
-                <li>Lego</li>
-            </ul>
-            <div class="row">
-                <div class="col l-6">
-                    <div class="product">
-                        <div class="owl-carousel owl-theme">
-                            <div class="item">
-                                <img src="~/img/img-slide/1.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="~/img/img-slide/2.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="~/img/img-slide/3.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                 <img src="~/img/img-slide/4.jpg" alt="">
-                            </div>
-                            <div class="item">
-                             <img src="~/img/img-slide/5.jpg" alt="">
-                            </div>
-                            <div class="item">
-                              <img src="~/img/img-slide/6.jpg" alt="">
-                            </div>
-                            <div class="item">
-                               <img src="~/img/img-slide/7.jpg" alt="">
-                            </div>
-                          
+
+<div class="content">
+    <div class="grid wide">
+        <ul class="nav-link-top">
+            <li>Đồ chơi</li>  &nbsp; > &nbsp;
+            <li>Lego</li>
+
+        </ul>
+        <div class="row">
+            <div class="col l-6">
+
+                <div class="product">
+
+                    <partial name="Product_Parital/_Product_Slider" model="@Model" />
+
+
+                    <div class="article content-t-wrap">
+                        <div class="article__content showall review-post short">
+                            <partial name="Product_Parital/_Product_Detail" model="@Model" />
                         </div>
-                          <div class="owl-dots">
-                                <button role="button" class="owl-dot dotnumber1 active" data-info="1" data-position-top="658"
-                                        data-position-left="0" style="height: 12.5%; user-select: auto;">
-                                    <img class="theImg"
-                                         src="//cdn.tgdd.vn/Products/Images/10421/258922/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308-6-180x120.jpg"
-                                         alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 1">
-                                </button><button role="button"
-                                                 class="owl-dot dotnumber2 " data-info="2" data-position-top="658" data-position-left="81.5"
-                                                 style="height: 12.5%; user-select: auto;">
-                                    <img class="theImg"
-                                         src="//cdn.tgdd.vn/Products/Images/10421/258922/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308-8-180x120.jpg"
-                                         alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 2">
-                                </button><button role="button"
-                                                 class="owl-dot dotnumber3" data-info="3" data-position-top="658" data-position-left="163"
-                                                 style="height: 12.5%; user-select: auto;">
-                                    <img class="theImg"
-                                         src="//cdn.tgdd.vn/Products/Images/10421/258922/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308-2-180x120.jpg"
-                                         alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 3">
-                                </button><button role="button"
-                                                 class="owl-dot dotnumber4" data-info="4" data-position-top="658" data-position-left="244.5"
-                                                 style="height: 12.5%; user-select: auto;">
-                                    <img class="theImg"
-                                         src="//cdn.tgdd.vn/Products/Images/10421/258922/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308-3-180x120.jpg"
-                                         alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 4">
-                                </button><button role="button"
-                                                 class="owl-dot dotnumber5" data-info="5" data-position-top="658" data-position-left="326"
-                                                 style="height: 12.5%; user-select: auto;">
-                                    <img class="theImg"
-                                         src="//cdn.tgdd.vn/Products/Images/10421/258922/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308-4-180x120.jpg"
-                                         alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 5">
-                                </button><button role="button"
-                                                 class="owl-dot dotnumber6" data-info="6" data-position-top="658" data-position-left="407.5"
-                                                 style="height: 12.5%; user-select: auto;">
-                                    <img class="theImg"
-                                         src="//cdn.tgdd.vn/Products/Images/10421/258922/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308-5-180x120.jpg"
-                                         alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 6">
-                                </button><button role="button"
-                                                 class="owl-dot dotnumber7" data-info="7" data-position-top="658" data-position-left="489"
-                                                 style="height: 12.5%; user-select: auto;">
-                                    <img class="theImg"
-                                         src="//cdn.tgdd.vn/Products/Images/10421/258922/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308-7-180x120.jpg"
-                                         alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 7">
-                                </button><button role="button"
-                                                 class="owl-dot dotnumber8" data-info="8" data-position-top="658" data-position-left="570.5"
-                                                 style="height: 12.5%; user-select: auto;">
-                                    <img class="theImg"
-                                         src="//cdn.tgdd.vn/Products/Images/10421/258922/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308-9-180x120.jpg"
-                                         alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 8">
-                                </button>
-                            </div>
-                        <div class="article content-t-wrap">
-                            <div class="article__content showall review-post short">
-                                <h2 class="article__content__title">
-                                    THÔNG TIN SẢN PHẨM
-                                </h2>
-                                <h3>Đặc điểm nổi bật</h3>
-                                <ul class="article__content__list">
-                                    <li>
-                                        <a href="https://www.avakids.com/do-choi/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308"
-                                           target="_blank"
-                                           title="Xem thêm Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308 (297 chi tiết)">
-                                            @Model[0].Product_Name
-                                        </a>
-                                        bao gồm 297 chi tiết.
-
-                                    </li>
-                                    <li>
-                                        <a href="https://www.avakids.com/do-choi/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308"
-                                           target="_blank"
-                                           title="Xem thêm Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308 (297 chi tiết)"></a>
-                                        Bé có thể sáng tạo và tưởng tượng câu chuyện của mình.
-                                    </li>
-                                    <li>
-                                        <a href="https://www.avakids.com/do-choi/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308"
-                                           target="_blank"
-                                           title="Xem thêm Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308 (297 chi tiết)">@Model[0].ProductDetail.product_type</a>
-                                        giúp rèn luyện tính rỉ mỉ, sáng tạo của bé khi lắp ráp.
-                                    </li>
-                                    <li>
-                                        <a href="https://www.avakids.com/do-choi/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308"
-                                           target="_blank"
-                                           title="Xem thêm Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308 (297 chi tiết)">@Model[0].ProductDetail.product_type2</a>
-                                        không có góc nhọn, thành phần độc hại nên an toàn cho bé.
-                                    </li>
-
-                                </ul>
-                                <h3>Hướng dẫn sử dụng </h3>
-                                <ul class="article__content__list">
-                                    <li>
-                                        <a href="https://www.avakids.com/do-choi/do-choi-tram-canh-sat-tuan-tra-cuu-hoa-bien-lego-city-60308"
-                                           target="_blank"
-                                           title="Xem thêm Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308 (297 chi tiết)">Đồ chơi</a>
-                                        không dùng pin.
-                                    </li>
-                                    <li>
-                                        Lắp ráp các khớp nối với nhau theo hình trên bao bì.
-                                    </li>
-                                    <li>
-                                        Có thể sáng tạo theo trí tưởng tượng của bé.
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-                        <div class="bg"></div>
                     </div>
-
-
-
+                    <div class="bg"></div>
                 </div>
-                <div class="col l-6">
-                    <div class="detail">
-                        <div class="box-productInfo">
-                            <h3 class="detail__name">
-                                @Model[0].Product_Name
-                                @*Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308 (297 chi tiết)*@
-                            </h3>
-                            <div class="detail__info">
-                                <div class="detail__price">
-                                    <span class="price__curent">@Model[0].Product_Price </span>
-                                    <span class="price__old">@Model[0].Product_OldPrice</span>
-                                    <p class="price__discount"> -@Model[0].Product_DegreePercent%  </p>
-                                </div>
-                                <div>
-                                    <span class="price__id">#@Model[0].Product_Id</span>
-                                </div>
 
 
-                            </div>
-                            <div class="detail__box">
-                                <p class="detail__box-txt">Khuyến mãi (Đến 31/05)</p>
-                                <ul class="detail__box-list">
-                                    <li>
-                                        Nhập mã AVAKID giảm 10% tối đa 100.000đ cho đơn hàng từ 300.000đ trở lên khi thanh toán qua Ví Moca
-                                        trên
-                                        ứng dụng Grab (click xem chi tiết)
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="detail-btn">
-                                <a class="btn btn-addcart">
-                                    MUA NGAY
-                                </a>
-                                <span class="btn btn-spmarket">
-                                    XEM CỬA HÀNG CÒN HÀNG
-                                </span>
-                            </div>
-                        </div>
-                        <ul class="policy">
-                            <li class="doitra">
-                                <div class="icon1">
-                                    <span class="material-symbols-outlined">
-                                        restart_alt
-                                    </span>
-                                    <p>
-                                        Không áp dụng đổi trả, bảo hành (Không bao gồm xe đồ chơi điều khiển)
-                                        <a href="">Xem chi tiết</a>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="doitra">
-                                <div class="icon1">
-                                    <span class="material-symbols-outlined">
-                                        local_shipping
-                                    </span>
-                                    <p>
-                                        Miễn phí giao hàng đơn từ 500.000đ trong 10km đầu tiên</a>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="doitra">
-                                <div class="icon1">
-                                    <span class="material-symbols-outlined">
-                                        logout
-                                    </span>
-                                    <p>
-                                        Giao hàng thu tiền, thanh toán online nhiều phương thức
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="doitra">
-                                <div class="icon1">
-                                    <span class="material-symbols-outlined">
-                                        restart_alt
-                                    </span>
-                                    <p>
-                                        Tổng đài:<a href=" ">
-                                            1900.866.874
-                                        </a>
-                                        (7h30 - 22h00)
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <div class="info__item spec_article">
-                            <p class="info-title">
-                                THÔNG TIN CHI TIẾT
-                            </p>
-                            <div class="info-content">
-                                <ul class="info-article ">
-                                    <li>
-                                        <p class="txt01">Thương hiệu</p>
-                                        <p class="txt02">@Model[0].ProductDetail.product_trademark </p>
-                                    </li>
-                                    <li>
-                                        <p class="txt01">Loại</p>
-                                        <p class="txt02">
-                                            <span class="dot">@Model[0].ProductDetail.product_type</span>
-                                            <span class="dot">@Model[0].ProductDetail.product_type2</span>
-
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="txt01">Độ tuổi</p>
-                                        <p class="txt02">
-                                            @Model[0].ProductDetail.product_age tuổi trở lên
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="txt01">Chất liệu</p>
-                                        <p class="txt02">
-                                            @Model[0].ProductDetail.product_substance
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="txt01">Kích thước</p>
-                                        <p class="txt02">
-                                            @Model[0].ProductDetail.product_size
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="txt01">Trọng lượng </p>
-                                        <p class="txt02">
-                                            @Model[0].ProductDetail.product_weight
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="txt01">Lưu ý khi sử dụng</p>
-                                        <p class="txt02">
-                                            Có các chi tiết nhỏ, không dùng cho trẻ dưới 3 tuổi, tránh nguy cơ tiềm ẩn khi trẻ sử dụng sai
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="txt01">
-                                            Nơi sản xuất
-                                        </p>
-                                        <p class="txt02">
-                                            @Model[0].ProductDetail.product_placeproduce
-                                        </p>
-                                    </li>
-
-
-                                </ul>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
+            <div class="col l-6">
+                <div class="detail">
+                    <partial name="Product_Parital/_Product_BoxInfo" model="@Model" />
 
-            <div class="detail-product">
-                <div class="detail-product-ttl">Đồ chơi khác</div>
-                <div class="listproduct">
-                    <div class="row">
-                        @for (var i = 0; i < 6; i++)
-                        {
-                            <div class="col l-2">
-                                <div class="item">
-                                    <a href="">
-                                        <div class="item-img">
-                                            <img src=@Model[i].Product_Img alt="">
-                                        </div>
-                                        <div class="item-wrap">
-                                            <h3>
-                                                @Model[i].Product_Name
-                                            </h3>
-                                            <p class="price-current">
-                                                @Model[i].Product_Price
 
-                                            </p>
-                                            <div class="boxprice">
-                                                <p class="price-old">
-                                                    @Model[i].Product_OldPrice đ
-                                                </p>
-                                                <span class="percent">@Model[i].Product_DegreePercent%</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="btn-buy">
-                                        <p>Chọn mua</p>
-                                    </div>
-                                </div>
-                            </div>
-                        }
+                    <partial name="Product_Parital/_Product_Policy" model="@Model" />
 
-                    
-                    </div>
+
+                    <partial name="Product_Parital/_Product_MoreInfo" model="@Model" />
+
 
                 </div>
             </div>
-            <form class="comment-list">
-                <h5>Hỏi đáp về Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308</h5>
-                <textarea class"comment-content" onfocus="this.value=''">Mời bạn bình luận về câu hỏi</textarea>
-            </form>
-
         </div>
 
+        <div class="detail-product">
+            <partial name="Product_Parital/_Product_Different" model="@Model" />
+
+        </div>
+        <partial name="Product_Parital/_Product_Form" model="@Model" />
+
 
     </div>
-    <div class="commitment">
-        <ul class="commitment-list">
-            <li>
-                <div class="li-icon">
-                    <i class="icon-chinhhang"></i>
-                </div>
-                <div class="li-content">
-                    <p><span>100% sản phẩm chính hãng</span><br>hơn 100 thương hiệu nổi tiếng</p>
-                </div>
-            </li>
-            <li>
-                <div class="li-icon">
-                    <i class="icon-doi1"></i>
-                </div>
-                <div class="li-content">
-                    <p><span>1 Đổi 1 trong vòng 1 tháng</span><span class="li-content-note">(Tuỳ sản phẩm)</span><br>Tại 49 cửa hàng trên toàn quốc</p>
-                    <a href="/bao-hanh-doi-tra" class="txt-link">Xem chi tiết</a>
-                </div>
-            </li>
-            <li>
-                <div class="li-icon">
-                    <i class="icon-mpgiaohang"></i>
-                </div>
-                <div class="li-content">
-                    <p><span>Miễn phí giao hàng</span><br>Cho đơn từ 500.000đ trong 10km đầu tiên </p>
-                    <a href="/chinh-sach-giao-hang" class="txt-link">Xem chi tiết</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+
+</div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-            integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript">
-        $('.owl-carousel').owlCarousel({
-          loop: false,
-          margin: 10,
-          nav: true,
-          dots: false,
-          responsive: {
-            0: {
-              items: 1
-            },
-            600: {
-              items: 1
-            },
-            1200: {
-              items: 1
-            }
-          }
-        })
-    </script>
-</body>
+<partial name="Product_Parital/_Product_CommitMent_List" model="@Model" />
 
-</html>
+
+
+
+
+@section scriptJsBJqueryProduct{
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+}
+
+@section scriptSliderProduct{
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+      loop: false,
+      margin: 10,
+      nav: true,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1200: {
+          items: 1
+        }
+      }
+    })
+</script>
+
+}
+
+
+
+
+
+
+

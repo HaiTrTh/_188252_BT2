@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<section class="section-top">
+    <a href="#" class="header-logo" >
+        <span class="icon-logo-newsversion "></span>
+    </a>
+    <form class="header-search">
+        <input id="search-box" class="search-input" type="text" placeholder="Tìm sản phẩm, nhóm hàng, hãng..." name="key-search" />
+
+        <button class="submit-search">
+            <span class="icon-search"></span>
+        </button>
+    </form>
+    <div class="box-right">
+        <a href="#" class="box-right-cart">
+            <span class="icon-cart"></span>
+            <span class="box-cart-txt">Giỏ hàng</span>
+        </a>
+
+        <a href="#" class="box-right-hotline">
+            Hotline (7h30 - 22h00)<br />
+            <span>1900 866 874</span>
+
+        </a>
+        <span class="box-right-space"></span>
+        <a href="#" class="box-right-txt">
+
+            <span>CẨM NANG  <br /> MẸ VÀ BÉ</span>
+        </a>
+    </div>
+</section>
+
+<script>
+    // const apiBaseUrl =  "/Controllers/ProductController.cs/"//đây là đường dấn tới controller của bạn
+
+    //  function search_product() {
+    //      let keySearch = document.getElementById("search-box").value;
+    //      $.ajax(`${apiBaseUrl}/search/` + keySearch)
+    //        .done(function (result) {
+    //              console.log(result)
+    //                $("#search-box").autocomplete({
+    //                    source: result
+    //                 });
+    //         })
+    //        .fail(function (error) {
+    //               console.log(error);
+    //        });
+    //};
+    $(document).ready(function(){
+        $('#search-box').keyup(function(){
+            var searchkey = $('search-box').val();
+            $.ajax({
+                type:"GET",
+                url:"/Home/Search",
+                success: function(yes){
+                    var data = JSON.parse(res);
+                    console.log(data);
+                }
+            })
+        })
+    })
+</script>

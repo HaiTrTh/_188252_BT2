@@ -1,0 +1,102 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model _188252_BT2.Models.CollectionDataModel
+
+
+<div class="detail-product-ttl">Đồ chơi khác</div>
+<div class="listproduct">
+    <div class="row">
+        @for(int item = 0; item< @Model.productList.Count() - 1; item++)
+        {
+             <div class="col l-2">
+
+
+                <div class="item">
+                    <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@Model.productList[item].Product_Id">
+                        <div class="item-img">
+                            <img src=@Model.productList[item].Product_Img alt="">
+                        </div>
+                        <div class="item-wrap">
+                            <h3>
+                               @Model.productList[item].Product_Name 
+                            </h3>
+                            <p class="price-current">
+                                @Model.product.ConvertNumber(@Model.productList[item].Product_Price)đ
+                            </p>
+                            <div class="boxprice">
+                                <p class="price-old">
+                                @Model.product.ConvertNumber(@Model.productList[item].Product_OldPrice)đ
+                                    
+                                </p>
+                                <span class="percent">
+                                    - @Model.productList[item].Product_DegreePercent%
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="btn-buy">
+                        <p>Chọn mua</p>
+                    </div>
+                </div>
+            
+
+            </div>
+        }
+        @foreach (var product in @Model.productList)
+        {
+           @* <div class="col l-2">
+
+
+                <div class="item">
+                    <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@product.Product_Id">
+                        <div class="item-img">
+                            <img src=@product.Product_Img alt="">
+                        </div>
+                        <div class="item-wrap">
+                            <h3>
+                                @product.Product_Name
+                            </h3>
+                            <p class="price-current">
+                                @product.ConvertNumber(@product.Product_Price)đ
+                            </p>
+                            <div class="boxprice">
+                                <p class="price-old">
+
+                                    @product.ConvertNumber(@product.Product_OldPrice)đ
+
+                                </p>
+                                <span class="percent">
+                                    - @product.Product_DegreePercent%
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="btn-buy">
+                        <p>Chọn mua</p>
+                    </div>
+                </div>
+            
+
+            </div>*@
+        }
+
+            @*@await Component.InvokeAsync("ProductItemComponent", product);*@
+
+
+        @*@for (int i = 0; i < Model.productList.Count() - 1; i++)
+            {
+            <div class="col l-2">
+
+            </div>
+            }*@
+
+
+
+
+    </div>
+
+</div>

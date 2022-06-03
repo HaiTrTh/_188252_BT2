@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+<div class="box-productInfo">
+    <h3 class="detail__name">
+        @Model.product.Product_Name
+    </h3>
+    <div class="detail__info">
+        <div class="detail__price">
+            <span class="price__curent">
+                @Model.product.ConvertNumber(@Model.product.Product_Price) đ
+
+            </span>
+            <span class="price__old">
+                @Model.product.ConvertNumber(@Model.product.Product_OldPrice) đ
+
+
+            </span>
+            <p class="price__discount">
+                -@Model.product.Product_DegreePercent%
+            </p>
+        </div>
+        <div>
+            <span class="price__id">
+                #@Model.product.Product_Id
+            </span>
+        </div>
+
+
+    </div>
+    <div class="detail__box">
+        <p class="detail__box-txt">Khuyến mãi (Đến 31/05)</p>
+        <ul class="detail__box-list">
+            <li>
+                Nhập mã AVAKID giảm 10% tối đa 100.000đ cho đơn hàng từ 300.000đ trở lên khi thanh toán qua Ví Moca
+                trên
+                ứng dụng Grab (click xem chi tiết)
+            </li>
+        </ul>
+    </div>
+    <div class="detail-btn">
+        <a class="btn btn-addcart">
+            MUA NGAY
+        </a>
+        <span class="btn btn-spmarket">
+            XEM CỬA HÀNG CÒN HÀNG
+        </span>
+    </div>
+</div>
