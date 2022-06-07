@@ -36,21 +36,7 @@ namespace _188252_BT2.Controllers
 
 
 
-        public JsonResult Search(string pr)
-        {
-            var listproduct = new ProductListModel().initProducts();
-            //var result = listproduct.Where(a => a.Product_Name.Contains(pr) || a.Product_Img.Contains(pr)).Take(1).Select(a => new {
-            //    resultItem = a.Product_Name + a.Product_Price + a.Product_DegreePercent
-            //}).ToList();      
-            //return Json(result);
-
-
-            var Name = (from product in listproduct
-                        where product.Product_Name.StartsWith(pr)
-                        select new { product });
-            return Json(Name);
-            //new Newtonsoft.Json.JsonSerializerSettings()
-        }
+      
 
 
 

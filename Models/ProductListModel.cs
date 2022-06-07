@@ -3,8 +3,22 @@ namespace _188252_BT2.Models
 {
     public class ProductListModel 
     {
-    
-       
+
+        public string ConvertNumber(decimal price)
+        {
+            var NewPrice = price.ToString();
+            var length = NewPrice.Length;
+            while (length > 0)
+            {
+                if (length - 3 > 0)
+                {
+                    NewPrice = NewPrice.Insert(length - 3, ".");
+                }
+                length = length - 3;
+            }
+            return NewPrice;
+        }
+        
         public List<Product> initProducts()
         {
             List<Product> ListProducts = new List<Product>();
@@ -12,7 +26,7 @@ namespace _188252_BT2.Models
             {
                 Product_Id = 1,
                 Product_Name = "Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",
-                Product_Price =  993200,
+                Product_Price = 993200,
                 Product_OldPrice =  1399000,
                 Product_DegreePercent = 29,
                 Product_Img = "/Img/0.jpg",

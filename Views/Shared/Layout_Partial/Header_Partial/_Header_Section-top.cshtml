@@ -5,12 +5,38 @@
 }
 
 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <section class="section-top">
-    <a href="#" class="header-logo" >
+    <a href="#" class="header-logo">
         <span class="icon-logo-newsversion "></span>
     </a>
     <form class="header-search">
         <input id="search-box" class="search-input" type="text" placeholder="Tìm sản phẩm, nhóm hàng, hãng..." name="key-search" />
+
+       @* <div class="search-product">
+           <ul>
+                @foreach (var item in @Model)
+                {
+                    <li>
+                        <div class="search-product-img">
+                            <img src="@item.Product_Img" />
+                        </div>
+                        <div class="search-product-content">
+                            <h1>
+                                @item.Product_Name
+                            </h1>
+                            <div class="search-product-price">
+                                <span class="search-product-priceCurrent">@item.Product_Price</span>
+                                <span class="search-product-priceOld">@item.Product_OldPrice</span>
+                                <span class="search-product-percent">-@item.Product_DegreePercent%</span>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>*@
 
         <button class="submit-search">
             <span class="icon-search"></span>
@@ -32,36 +58,59 @@
 
             <span>CẨM NANG  <br /> MẸ VÀ BÉ</span>
         </a>
+
     </div>
 </section>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
-<script>
-    // const apiBaseUrl =  "/Controllers/ProductController.cs/"//đây là đường dấn tới controller của bạn
-
-    //  function search_product() {
-    //      let keySearch = document.getElementById("search-box").value;
-    //      $.ajax(`${apiBaseUrl}/search/` + keySearch)
-    //        .done(function (result) {
-    //              console.log(result)
-    //                $("#search-box").autocomplete({
-    //                    source: result
-    //                 });
-    //         })
-    //        .fail(function (error) {
-    //               console.log(error);
-    //        });
-    //};
+<script type="text/javascript">
     $(document).ready(function(){
         $('#search-box').keyup(function(){
-            var searchkey = $('search-box').val();
+            var searchkey = $('#search-box').val();
+            $(".search-product").remove();
             $.ajax({
                 type:"GET",
-                url:"/Home/Search",
-                success: function(yes){
-                    var data = JSON.parse(res);
-                    console.log(data);
+                url: "/Home/Search",
+                data: {searchkeyWork: searchkey},
+                success: function(res){
+                    var product = JSON.parse(res);
+                    if(searchkey.length >= 2 && product.length > 0){
+                        console.log(product);
+                        var  html_body_search = `
+                            <div class="search-product">
+                                <ul></ul>
+                            </div>
+                        `
+                    } $(".header-search").append(html_body_search);
+                     $.each(product, function (key, item) {
+                            if(searchkey.length >=2 && product){
+                                var html_search_product_list = `
+                           
+                                     <li>
+                                        
+                                        <div class="search-product-img">
+                                            <img src="${item.Product_Img}" />
+                                        </div>
+                                        <div class="search-product-content">
+                                            <h1>
+                                                ${item.Product_Name}
+                                            </h1>
+                                            <div class="search-product-price">
+                                                <span class="search-product-priceCurrent">${item.Product_Price}</span>
+                                                <span class="search-product-priceOld">${item.Product_OldPrice}</span>
+                                                <span class="search-product-percent">-${item.Product_DegreePercent}%</span>
+                                            </div>
+                                        </div>
+                                         
+                                    </li>
+                                `
+                                $(".search-product").append(html_search_product_list);
+                            }
+                         });
                 }
             })
+
         })
     })
+
 </script>

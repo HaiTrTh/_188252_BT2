@@ -197,12 +197,11 @@
     margin-left: 20px;
     flex: 1;
     background-color: #fff;
-    border-radius: 20px;
     float: left;
     position: relative;
     transition: .3s;
     height: 40px;
-    overflow : hidden;
+    border-radius: 20px;
 }
 
 .search-input {
@@ -216,7 +215,7 @@
     width: 90%;
     border: none;
     outline: none;
-   
+    border-radius: 20px;
 }
 
 .submit-search {
@@ -248,15 +247,15 @@
 
 
 
-        .box-right-cart span {
-            font-size: 14px;
-            padding-right: 15px;
-            padding-left: 10px;
-            vertical-align: middle;
-            border-radius: 8px;
-            transition: .3s;
-            text-decoration: none;
-        }
+.box-right-cart span {
+    font-size: 14px;
+    padding-right: 15px;
+    padding-left: 10px;
+    vertical-align: middle;
+    border-radius: 8px;
+    transition: .3s;
+    text-decoration: none;
+}
 
 
 .box-right-cart:hover {
@@ -314,8 +313,6 @@
     left: 0;
     top: 54px;
     width: 1px;*/
-
-    
 }
 
 .box-right-txt {
@@ -329,9 +326,9 @@
         color: #f2f2f2;
     }
 
- .box-right-cart,
- .box-right-hotline,
- .box-right-txt {
+.box-right-cart,
+.box-right-hotline,
+.box-right-txt {
     color: #fff !important;
     text-decoration: none;
     font-size: 14px;
@@ -561,13 +558,77 @@
     height: 29px;
     width: 27px;
 }
+
 .icon-doi1 {
     background-position: -170px -55px;
     height: 29px;
     width: 24px;
 }
+
 .icon-mpgiaohang {
     background-position: -200px -55px;
     height: 22px;
     width: 28px;
+}
+
+
+/*----- #search-product ------ */
+
+.search-product {
+    position: absolute;
+    z-index: 100;
+    border-radius: 20px;
+    background: white; 
+    overflow: hidden;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+.search-product ul {
+    padding: 0
+}
+
+.search-product li {
+    display: flex;
+    background-color: white;
+}
+
+.search-product-img {
+    width: 120px;
+}
+
+    .search-product-img img {
+        max-width: 100%;
+        min-width: 100%;
+        padding: 12px;
+    }
+
+.search-product-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+    padding: 0 12px;
+}
+
+    .search-product-content h1 {
+        font-size: 16px;
+        margin: 0px;
+    }
+
+.search-product-price {
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-product-priceCurrent {
+}
+
+.search-product-priceOld {
+}
+
+.search-product-percent {
+    background: #ed1164;
+    color: white;
+    padding: 0 4px;
 }
