@@ -24,6 +24,7 @@
             }
             return NewPrice;
         }
+
         public decimal CaculatePrice(decimal oldprice, decimal percent)
         {
             decimal price;

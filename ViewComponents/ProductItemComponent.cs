@@ -3,9 +3,9 @@ namespace _188252_BT2.Models
 {
     public class ProductItemComponent : ViewComponent
     {
-        public IViewComponentResult Invoke(ProductListModel product)
+        public IViewComponentResult Invoke(ProductListModel listproduct)
         {
-            return View( product);
+            return View(listproduct);
         }
     }
 }

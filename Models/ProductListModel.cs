@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 namespace _188252_BT2.Models
 {
-    public class ProductListModel 
+    public class ProductListModel
     {
 
         public string ConvertNumber(decimal price)
@@ -18,7 +18,7 @@ namespace _188252_BT2.Models
             }
             return NewPrice;
         }
-        
+
         public List<Product> initProducts()
         {
             List<Product> ListProducts = new List<Product>();
@@ -27,7 +27,7 @@ namespace _188252_BT2.Models
                 Product_Id = 1,
                 Product_Name = "Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",
                 Product_Price = 993200,
-                Product_OldPrice =  1399000,
+                Product_OldPrice = 1399000,
                 Product_DegreePercent = 29,
                 Product_Img = "/Img/0.jpg",
                 ProductDetail = new ProductDetailModel()
@@ -48,7 +48,7 @@ namespace _188252_BT2.Models
             {
                 Product_Id = 2,
                 Product_Name = "Đồ chơi trạm rửa xe thông minh Hot Wheels FTB66",
-                Product_Price =  988200,
+                Product_Price = 988200,
                 Product_OldPrice = 1349000,
                 Product_DegreePercent = 26,
                 Product_Img = "/Img/1.jpg",
@@ -56,7 +56,7 @@ namespace _188252_BT2.Models
                 {
                     product_trademark = "HOT WHEELS (Mỹ)",
                     product_type = "Đồ chơi bé trai",
-                    product_type2 = "Đồ chơi nhập vai", 
+                    product_type2 = "Đồ chơi nhập vai",
                     product_age = "Từ 4 đến 8 tuổi",
                     product_substance = "Kim loại Nhựa",
                     product_size = "56x30x15 cm",
@@ -92,7 +92,7 @@ namespace _188252_BT2.Models
             {
                 Product_Id = 4,
                 Product_Name = "Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",
-                Product_Price =  993200,
+                Product_Price = 993200,
                 Product_OldPrice = 1399000,
                 Product_DegreePercent = 29,
                 Product_Img = "/Img/3.jpg",
@@ -114,8 +114,8 @@ namespace _188252_BT2.Models
             {
                 Product_Id = 5,
                 Product_Name = "Đồ chơi tàu chiến hạm bay Bounty Lego Ninjago 71749 (147 chi tiết)",
-                Product_Price =  1039200,
-                Product_OldPrice =  1299000,
+                Product_Price = 1039200,
+                Product_OldPrice = 1299000,
                 Product_DegreePercent = 20,
                 Product_Img = "/Img/4.jpg",
                 ProductDetail = new ProductDetailModel()
@@ -137,7 +137,7 @@ namespace _188252_BT2.Models
             {
                 Product_Id = 6,
                 Product_Name = "Đồ chơi tàu chiến hạm bay Bounty Lego Ninjago 71749 (147 chi tiết)",
-                Product_Price =  1002000,
+                Product_Price = 1002000,
                 Product_OldPrice = 1299000,
                 Product_DegreePercent = 23,
                 Product_Img = "/Img/5.jpg",
@@ -159,9 +159,9 @@ namespace _188252_BT2.Models
             {
                 Product_Id = 7,
                 Product_Name = "Đồ chơi cắm trại ngoài trời Lego Friends 41392LG (241 chi tiết)",
-                Product_Price =  1002500,
-                Product_OldPrice =  1269000,
-                Product_DegreePercent = 21, 
+                Product_Price = 1002500,
+                Product_OldPrice = 1269000,
+                Product_DegreePercent = 21,
                 Product_Img = "/Img/6.jpg",
                 ProductDetail = new ProductDetailModel()
                 {
@@ -179,16 +179,25 @@ namespace _188252_BT2.Models
             });
             return ListProducts;
         }
-            
-        //public Product filterProduct()
-        //{
-        //    Product product = new Product();
-        //    product = initProducts().Where(x=> x.Product_Name.ToLower().Contains(SearchValue.Trim().To))
-
-
-        //    return product;        
-        //}
-       
+        public List<ProductSearch> LitsAll()
+        {
+            var ListProduct = new List<ProductSearch>() { };
+            foreach( var i in initProducts())
+            {
+                ListProduct.Add(
+                  new ProductSearch()
+                  {
+                      Product_Id = i.Product_Id,
+                      Product_Name = i.Product_Name,
+                      _Product_Price = ConvertNumber(i.Product_Price),
+                      _Product_OldPrice = ConvertNumber(i.Product_OldPrice),
+                      Product_DegreePercent = i.Product_DegreePercent,
+                      Product_Img = i.Product_Img,
+                      ProductDetail = new ProductDetailModel()
+                  }
+                  ); ;
+            }
+            return ListProduct;
+        }
     }
-
 }
