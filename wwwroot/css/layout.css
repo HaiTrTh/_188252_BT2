@@ -618,17 +618,21 @@
 
 .search-product-price {
     display: flex;
-    justify-content: space-around;
+    gap: 2rem;
 }
 
 .search-product-priceCurrent {
+    font-weight: bold;
+
 }
 
 .search-product-priceOld {
+    text-decoration-line: line-through;
 }
 
 .search-product-percent {
     background: #ed1164;
     color: white;
     padding: 0 4px;
+    border-radius: 12px;
 }

@@ -14,8 +14,6 @@ namespace _188252_BT2.Controllers
             _logger = logger;
         }
 
-
-
         public IActionResult Index()
         {
             var listproduct = new ProductListModel().initProducts();

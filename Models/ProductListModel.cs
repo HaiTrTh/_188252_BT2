@@ -24,12 +24,22 @@ namespace _188252_BT2.Models
             List<Product> ListProducts = new List<Product>();
             ListProducts.Add(new Product()
             {
-                Product_Id = 1,
+                Product_Id = 0,
                 Product_Name = "Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",
                 Product_Price = 993200,
                 Product_OldPrice = 1399000,
                 Product_DegreePercent = 29,
                 Product_Img = "/Img/0.jpg",
+                ProductListImg = new List<string>
+                {
+                    "/Img/0.jpg",
+                    "/Img/1.jpg",
+                    "/Img/2.jpg",
+                    "/Img/3.jpg",
+                    "/Img/4.jpg",
+                    "/Img/5.jpg",
+                    "/Img/6.jpg",
+                },
                 ProductDetail = new ProductDetailModel()
                 {
                     product_trademark = "Lego (Đan Mạch)",
@@ -41,17 +51,27 @@ namespace _188252_BT2.Models
                     product_weight = 595,
                     product_note = "Có các chi tiết nhỏ, không dùng cho trẻ dưới 3 tuổi, tránh nguy cơ tiềm ẩn khi trẻ sử dụng sai",
                     product_placeproduce = "Trung Quốc",
-
                 }
-            });
+            }); 
             ListProducts.Add(new Product()
             {
-                Product_Id = 2,
+                Product_Id = 1,
                 Product_Name = "Đồ chơi trạm rửa xe thông minh Hot Wheels FTB66",
                 Product_Price = 988200,
                 Product_OldPrice = 1349000,
                 Product_DegreePercent = 26,
                 Product_Img = "/Img/1.jpg",
+                ProductListImg = new List<string>
+                {
+                    "/Img/1.jpg",
+                    "/Img/0.jpg",
+                    "/Img/2.jpg",
+                    "/Img/3.jpg",
+                    "/Img/4.jpg",
+                    "/Img/5.jpg",
+                    "/Img/6.jpg",
+
+                },
                 ProductDetail = new ProductDetailModel()
                 {
                     product_trademark = "HOT WHEELS (Mỹ)",
@@ -63,17 +83,26 @@ namespace _188252_BT2.Models
                     product_weight = 1071,
                     product_note = "Có các chi tiết nhỏ, không dùng cho trẻ dưới 3 tuổi, tránh nguy cơ tiềm ẩn khi trẻ sử dụng sai",
                     product_placeproduce = "Trung Quốc",
-
                 }
             });
             ListProducts.Add(new Product()
             {
-                Product_Id = 3,
+                Product_Id = 2,
                 Product_Name = "Đồ chơi thùng gạch sáng tạo Lego Duplo 10913 (65 chi tiết)",
                 Product_Price = 1002400,
                 Product_OldPrice = 1319000,
                 Product_DegreePercent = 24,
                 Product_Img = "/Img/2.jpg",
+                ProductListImg = new List<string>
+                {
+                    "/Img/2.jpg",
+                    "/Img/0.jpg",
+                    "/Img/1.jpg",
+                    "/Img/3.jpg",
+                    "/Img/4.jpg",
+                    "/Img/5.jpg",
+                    "/Img/6.jpg",
+                },
                 ProductDetail = new ProductDetailModel()
                 {
                     product_trademark = "Lego (Đan Mạch)",
@@ -85,17 +114,26 @@ namespace _188252_BT2.Models
                     product_weight = 1046,
                     product_note = "Chỉ thích hợp cho trẻ em từ 1.5 tuổi trở lên",
                     product_placeproduce = "Trung Quốc",
-
                 }
             });
             ListProducts.Add(new Product()
             {
-                Product_Id = 4,
+                Product_Id = 3,
                 Product_Name = "Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",
                 Product_Price = 993200,
                 Product_OldPrice = 1399000,
                 Product_DegreePercent = 29,
                 Product_Img = "/Img/3.jpg",
+                ProductListImg = new List<string>
+                {
+                    "/Img/3.jpg",
+                    "/Img/0.jpg",
+                    "/Img/1.jpg",
+                    "/Img/2.jpg",
+                    "/Img/4.jpg",
+                    "/Img/5.jpg",
+                    "/Img/6.jpg",
+                },
                 ProductDetail = new ProductDetailModel()
                 {
                     product_trademark = "Lego (Đan Mạch)",
@@ -107,17 +145,27 @@ namespace _188252_BT2.Models
                     product_weight = 595,
                     product_note = "Có các chi tiết nhỏ, không dùng cho trẻ dưới 3 tuổi, tránh nguy cơ tiềm ẩn khi trẻ sử dụng sai",
                     product_placeproduce = "Trung Quốc",
-
                 }
             });
             ListProducts.Add(new Product()
             {
-                Product_Id = 5,
+                Product_Id = 4,
                 Product_Name = "Đồ chơi tàu chiến hạm bay Bounty Lego Ninjago 71749 (147 chi tiết)",
                 Product_Price = 1039200,
                 Product_OldPrice = 1299000,
                 Product_DegreePercent = 20,
                 Product_Img = "/Img/4.jpg",
+                ProductListImg = new List<string>
+                {
+                    "/Img/4.jpg",
+                    "/Img/0.jpg",
+                    "/Img/1.jpg",
+                    "/Img/2.jpg",
+                    "/Img/3.jpg",
+                    "/Img/5.jpg",
+                    "/Img/6.jpg",
+
+                },
                 ProductDetail = new ProductDetailModel()
                 {
                     product_trademark = "Lego (Đan Mạch)",
@@ -135,12 +183,23 @@ namespace _188252_BT2.Models
             });
             ListProducts.Add(new Product()
             {
-                Product_Id = 6,
+                Product_Id = 5,
                 Product_Name = "Đồ chơi tàu chiến hạm bay Bounty Lego Ninjago 71749 (147 chi tiết)",
                 Product_Price = 1002000,
                 Product_OldPrice = 1299000,
                 Product_DegreePercent = 23,
                 Product_Img = "/Img/5.jpg",
+                ProductListImg = new List<string>
+                {
+                    "/Img/5.jpg",
+                    "/Img/0.jpg",
+                    "/Img/1.jpg",
+                    "/Img/2.jpg",
+                    "/Img/3.jpg",
+                    "/Img/4.jpg",
+                    "/Img/6.jpg",
+
+                },
                 ProductDetail = new ProductDetailModel()
                 {
                     product_trademark = "Lego (Đan Mạch)",
@@ -157,12 +216,23 @@ namespace _188252_BT2.Models
             });
             ListProducts.Add(new Product()
             {
-                Product_Id = 7,
+                Product_Id = 6,
                 Product_Name = "Đồ chơi cắm trại ngoài trời Lego Friends 41392LG (241 chi tiết)",
                 Product_Price = 1002500,
                 Product_OldPrice = 1269000,
                 Product_DegreePercent = 21,
                 Product_Img = "/Img/6.jpg",
+                ProductListImg = new List<string>
+                {
+                    "/Img/6.jpg",
+                    "/Img/0.jpg",
+                    "/Img/1.jpg",
+                    "/Img/2.jpg",
+                    "/Img/3.jpg",
+                    "/Img/4.jpg",
+                    "/Img/5.jpg",
+
+                },
                 ProductDetail = new ProductDetailModel()
                 {
                     product_trademark = "Lego (Đan Mạch)",

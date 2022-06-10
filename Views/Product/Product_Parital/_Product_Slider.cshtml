@@ -1,36 +1,48 @@
 ﻿@model _188252_BT2.Models.CollectionDataModel
 
 
-<div class="owl-carousel owl-theme ">
-
-    <div class="item">
-        <img src="@Model.product.Product_Img" alt="hinh">
-    </div>
-
-    @for (int i = 0; i < @Model.productList.Count(); i++)
+<div class="product">
+    @for (int index = 0; index < @Model.productList.Count(); index++)
     {
-        <div class="item">
-            <img src="@Model.productList[i].Product_Img" alt="hinh">
+            @*<img src="@Model.product.Product_Img" alt="hinh">*@
+    
+        <div class="mySlides">
+            <img src="@Model.product.ProductListImg[index]" alt="hinh">
+
+            @*<img src="@Model.productList[index].Product_Img" alt="hinh">*@
+        </div>
+    }   
+
+    <div class="product-navi">
+        <div class="click-fullscreen">
+        </div>
+        <div class>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            @*<div class="counter">
+                <span class="counter-current">
+                    1
+                </span>
+                 <span class="counter-current">
+                    4
+                </span>
+            </div>*@
         </div>
 
-    }
+    </div>
 
-    <div class="owl-dots">
+    <div class="row-slide">
+        @for (int index = 0; index < @Model.productList.Count(); index++)
+        {
+            <div class="column">
+                <button>
+                    <div class="dotitem">
+                        <img class="demo cursor" src="@Model.product.ProductListImg[index]" alt="hinh">
+                    </div>
+                </button>
+            </div>
 
-    @foreach (var item in Model.productList)
-    {
-        <button role="button" class="owl-dot active" data-position-top="658"
-            data-position-left="0" style="height: 12.5%; user-select: auto;">
-            <img class="theImg"
-             src="@item.Product_Img"
-             alt="Đồ chơi trạm cảnh sát tuần tra &amp; cứu hỏa biển LEGO CITY 60308 - 1">
-        </button>
-
-    }
-
+        }
+    </div>
 </div>
-
-
-</div>
-
-

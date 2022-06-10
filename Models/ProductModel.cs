@@ -10,6 +10,10 @@
         public string Product_Img { get; set; }
         public ProductDetailModel ProductDetail { get; set; }
 
+        public  List<string> ProductListImg { get; set; }
+
+
+     
         public string ConvertNumber(decimal price)
         {
             var NewPrice = price.ToString();

@@ -33,13 +33,13 @@ namespace _188252_BT2.Controllers
             return View(model);
 
         }
-
-
-
-      
-
-
-
+        public IActionResult ProductImgs(int id)
+        {
+            ProductListModel productListModel = new ProductListModel();
+            var productList = productListModel.initProducts();
+            var product = productList.First(x => x.Product_Id == id);
+            return View(product);
+        }
 
     }
 }
