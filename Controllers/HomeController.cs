@@ -44,8 +44,8 @@ namespace _188252_BT2.Controllers
                 }
             }
             return Json(value);
-
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
             public IActionResult Error()

@@ -1,0 +1,179 @@
+﻿@model List<_188252_BT2.Models.Product>
+{
+@{
+    ViewData["Title"] = "BimTa";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/bim.css" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<link rel="stylesheet" href="~/css/main.css">
+
+<div class="container">
+    <h3>117 SẢN PHẨM TÃ CHO BÉ</h3>
+
+    <!-- box-filter -->
+    <div class="box-filter">
+
+        <div class="warpper-filfer">
+            @*item1*@
+            <div class="filter-item filter-main">
+                <div class="filter-item__title">
+                    <i>
+                        <span class="material-symbols-outlined"> filter_alt </span>
+                    </i>
+                    Lọc
+
+                    <partial name="BimTa_Partial/_BimTa_Main_Filter" model="@Model" />
+
+
+                </div>
+            </div>
+
+            @*item2*@
+            <div class="filter-item filter-hang">
+                Hãng
+                <span class="material-symbols-outlined"> arrow_drop_down </span>
+
+                <partial name="BimTa_Partial/_BimTa_Hang_Filter" model="@Model" />
+
+
+            </div>
+
+            @*item3*@
+            <div class="filter-item filter-price">
+                Giá
+                <span class="material-symbols-outlined"> arrow_drop_down </span>
+                <partial name="BimTa_Partial/_BimTa_Price_Filter" model="@Model" />
+
+            </div>
+
+            @*item4*@
+
+            <div class="filter-item filter-type" onclick="showFilterItem(this);">
+                Loại
+                <span class="material-symbols-outlined"> arrow_drop_down </span>
+
+                <partial name="BimTa_Partial/_BimTa_Type_Filter" model="@Model" />
+
+
+
+            </div>
+            @*item5*@
+
+            <div class="filter-item filter-weight">
+                Cân nặng
+                <span class="material-symbols-outlined"> arrow_drop_down </span>
+                <partial name="BimTa_Partial/_BimTa_Weight_Filter" model="@Model" />
+
+            </div>
+            @*item6*@
+            <div class="filter-item filter-size">
+                Size
+                <span class="material-symbols-outlined"> arrow_drop_down </span>
+
+                <partial name="BimTa_Partial/_BimTa_Size_Filter" model="@Model" />
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Phổ biến -->
+
+    <div class="filter-dropdown">
+        <div class="filter-popular">
+            <div class="filter-popular-title">
+                Phổ biến:
+            </div>
+            <div class="filter-list">
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118624/Bobby-200x120.png" alt="">
+                </a>
+
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118863/Huggies-200x120-1.png" alt="">
+                </a>
+
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118625/Moony-200x120.png" alt="">
+                </a>
+
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118862/Merries-200x120.png" alt="">
+                </a>
+
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2021/11/Sports/Images/119050/Pamper-200x120.png" alt="">
+                </a>
+
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2022/03/Sports/Images/164922/ta-quan-moony-man-be-trai-size-xl-38-mieng-cho-be-12-17kg-7(200%C3%97120px)(1)-200x120.png"
+                         alt="">
+                </a>
+
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2021/11/Sports/Images/121689/httpscdn.tgdd.vn202111SportsImages121689Babymommy-200x120-1.png-removebg-preview-200x120.png"
+                         alt="">
+                </a>
+
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2022/01/Sports/Images/139454/ta-dan-Huggies-Dry-size-XL-38-mieng-cho-be-11-16kg-500(200x120px)-200x120.png"
+                         alt="">
+                </a>
+
+                <a href="" class="c-btnbox filter-manu">
+                    <img src="https://cdn.tgdd.vn/2022/01/Sports/Images/0/Thietkekhongten(96)-200x120.png" alt="">
+                </a>
+
+
+            </div>
+        </div>
+        <div class="sort-select" onclick="showFilterItem1(this)">
+            <p class="click-sort ci-btnbox">
+                Xếp theo:
+                <span class="sort-show">
+                    <t></t>Nổi bật
+                </span>
+                <span class="material-symbols-outlined"> arrow_drop_down </span>
+
+            </p>
+            <div class="sort-select-main" id="sort-main" >
+                <p class="sort" data-name="top"><i></i>Nổi bật</p>
+                <p class="sort" data-name="trend"><i></i>Bán chạy</p>
+                <p class="sort" data-name="bestDis"><i></i>% Giảm nhiều</p>
+                <p class="sort" data-name="priceDesc"><i></i>Giá cao đến thấp</p>
+                <p class="sort" data-name="priceAsc"><i></i>Giá thấp đến cao</p>
+            </div>
+        </div>
+
+
+        @*Partial product*@
+
+    </div>
+
+    @*List product*@
+
+    <div class="detail-product-ttl">Đồ chơi khác</div>
+    <div class="listproduct">
+        <div class="list_bimta" id="list_bimta_grid">
+            <div class="row">
+                @foreach (var item in @Model)
+                {
+                    @await Component.InvokeAsync("BimTaBoxes",item.Product_Id)
+
+                }
+
+                @*  @for (int i = 1; i <= @Model.Count; i++)
+                {
+                @await Component.InvokeAsync("BimTaBoxes",i)
+                }*@
+            </div>
+
+            }
+        </div>
+    </div>
+
+    <script src="/js/bimta.js"></script>

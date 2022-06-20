@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "View";
+}
+
+
+@using System.Globalization
+@model List<_188252_BT2.Models.Product>
+
+<div class="row">
+    @foreach (var item in @Model.Take(8))
+    {
+        @await Component.InvokeAsync("BimTaBoxes",item.Product_Id)
+    }
+
+</div>
+
+
+
+
+
+

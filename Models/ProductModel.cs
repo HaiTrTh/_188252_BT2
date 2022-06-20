@@ -36,6 +36,19 @@
             return price;
         }
 
-        
+       
+
+
+    }
+    public class QuerySearch
+    {
+        public List<string> Product_type { get; set; }
+
+        public List<string> Product_trademark { get; set; }
+        public List<string> Product_size { get; set; }
+
+        public string orderType { get; set; }
+
+
     }
 }

@@ -24,7 +24,7 @@ namespace _188252_BT2.Models
             List<Product> ListProducts = new List<Product>();
             ListProducts.Add(new Product()
             {
-                Product_Id = 0,
+                Product_Id = 1,
                 Product_Name = "Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",
                 Product_Price = 993200,
                 Product_OldPrice = 1399000,

@@ -33,17 +33,22 @@ app.UseAuthorization();
 app.MapControllerRoute(
                 name: "ProductDetail",
                 pattern: "san-pham/id-{id}",
-                defaults: new { controller = "Product", action = "ProductDetail" });
+                defaults: new { controller = "Product", action = "ProductDetail"});
 
 app.MapControllerRoute(
                 name: "ProductDetail",
                 pattern: "san-pham/id-{id}",
-                defaults: new { controller = "Product", action = "ProductDetail" });
+                defaults: new { controller = "Product", action = "ProductDetail"});
+
+app.MapControllerRoute(
+                name: "TaChoBe",
+                pattern: "ta-cho-be",
+                defaults: new { controller = "BimTa", action = "Index" });
 
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=BimTa}/{action=Index}/{id?}");
 
 
 //app.MapControllerRoute(
@@ -59,3 +64,4 @@ app.MapControllerRoute(
 
 
 app.Run();
+

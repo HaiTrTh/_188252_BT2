@@ -2,32 +2,31 @@
 
 
 <div class="product">
-    @for (int index = 0; index < @Model.productList.Count(); index++)
-    {
-            @*<img src="@Model.product.Product_Img" alt="hinh">*@
-    
-        <div class="mySlides">
-            <img src="@Model.product.ProductListImg[index]" alt="hinh">
+    <div class="product-slider">
+        @for (int index = 0; index < @Model.productList.Count(); index++)
+        {
 
-            @*<img src="@Model.productList[index].Product_Img" alt="hinh">*@
-        </div>
-    }   
+            <div class="mySlides">
+                <img src="@Model.product.ProductListImg[index]" alt="hinh">
+
+            </div>
+        }
+    </div>
 
     <div class="product-navi">
-        <div class="click-fullscreen">
+        <div id="click_fullscreen" class="click-fullscreen" onclick="clickFullScreen()">
         </div>
-        <div class>
+        <div>
             <a class="prev" onclick="plusSlides(-1)">❮</a>
 
             <a class="next" onclick="plusSlides(1)">❯</a>
-            @*<div class="counter">
+            <div class="counter">
+
                 <span class="counter-current">
-                    1
                 </span>
-                 <span class="counter-current">
-                    4
+                <span class="counter-current">
                 </span>
-            </div>*@
+            </div>
         </div>
 
     </div>
@@ -42,7 +41,13 @@
                     </div>
                 </button>
             </div>
-
         }
+
     </div>
+    <div id="bg-imgslider" class="bg-imgslider">
+        <span class="close-popupslider">Đóng</span>
+    </div>
+    <script>
+       
+    </script>
 </div>

@@ -24,22 +24,22 @@
 
                         var html_search_product_list = `
 
-                                     <li>
-
-                                        <div class="search-product-img">
-                                            <img src="${item.Product_Img}" />
-                                        </div>
-                                        <div class="search-product-content">
-                                            <h1>
-                                                ${item.Product_Name}
-                                            </h1>
-                                            <div class="search-product-price">
-                                                <span class="search-product-priceCurrent">${item._Product_Price}đ</span>
-                                                <span class="search-product-priceOld">${item._Product_OldPrice}đ</span>
-                                                <span class="search-product-percent">-${item.Product_DegreePercent}%</span>
+                                     <li class="search-product-li">
+                                        <a>
+                                            <div class="search-product-img">
+                                                <img src="${item.Product_Img}" />
                                             </div>
-                                        </div>
-
+                                            <div class="search-product-content">
+                                                <h1>
+                                                    ${item.Product_Name}
+                                                </h1>
+                                                <div class="search-product-price">
+                                                    <span class="search-product-priceCurrent">${item._Product_Price}đ</span>
+                                                    <span class="search-product-priceOld">${item._Product_OldPrice}đ</span>
+                                                    <span class="search-product-percent">-${item.Product_DegreePercent}%</span>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </li>
                                 `
                         $(".search-product").append(html_search_product_list);

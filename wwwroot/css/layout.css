@@ -442,6 +442,7 @@
     background-color: #ed1164;
     color: #fff;
     position: relative;
+    margin-top:1rem;
 }
 
 .footer-box-2 {
@@ -584,6 +585,9 @@
     width: 100%;
     padding: 0;
 }
+.search-product-li{
+    cursor: pointer;
+}
 .search-product ul {
     padding: 0
 }
@@ -591,11 +595,20 @@
 .search-product li {
     display: flex;
     background-color: white;
+    cursor : pointer;
+}
+.search-product li a{
+    display: flex;
+    background-color: white;
+    cursor: pointer;
+}
+.search-product li a:hover .search-product-content h1{
+
 }
 
-.search-product-img {
-    width: 120px;
-}
+    .search-product-img {
+        width: 120px;
+    }
 
     .search-product-img img {
         max-width: 100%;
