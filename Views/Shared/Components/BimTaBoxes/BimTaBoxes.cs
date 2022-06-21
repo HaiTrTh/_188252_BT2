@@ -15,10 +15,7 @@ namespace _188252_BT2.Models
             var productsSearched = (from product in products
                                     where product.Product_Id == intID
                                     select product).ToList();
-
             Product productA = productsSearched.First();
-
-
 
             return View<Product>(productA); //mặc định sẽ chạy Default.cshtml
         }

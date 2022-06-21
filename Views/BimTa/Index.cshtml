@@ -1,4 +1,5 @@
-﻿@model List<_188252_BT2.Models.Product>
+﻿@using PagedList.Mvc
+@model List<_188252_BT2.Models.Product>
 {
 @{
     ViewData["Title"] = "BimTa";
@@ -140,7 +141,7 @@
                 <span class="material-symbols-outlined"> arrow_drop_down </span>
 
             </p>
-            <div class="sort-select-main" id="sort-main" >
+            <div class="sort-select-main" id="sort-main">
                 <p class="sort" data-name="top"><i></i>Nổi bật</p>
                 <p class="sort" data-name="trend"><i></i>Bán chạy</p>
                 <p class="sort" data-name="bestDis"><i></i>% Giảm nhiều</p>
@@ -163,16 +164,39 @@
                 @foreach (var item in @Model)
                 {
                     @await Component.InvokeAsync("BimTaBoxes",item.Product_Id)
-
                 }
 
-                @*  @for (int i = 1; i <= @Model.Count; i++)
-                {
-                @await Component.InvokeAsync("BimTaBoxes",i)
-                }*@
             </div>
+        </div>
+    </div>
 
-            }
+    @*paging*@
+
+    <div id="paging">
+        <div class="pagbreak fInter" data-total-page="4">
+            
+            <a onclick="gotoPageIndex(0)" id="_pgPreviousPage"
+               class="button-pagbreak button-pagbreak-prev disabled"
+                data-page="1">
+                <span class="material-symbols-outlined">
+                    chevron_left
+                </span>
+            </a>
+            <!-- <span class="active">1</span> -->
+            <a  onclick="gotoPageIndex(1)" class="page-item active" data-page="1">1</a>
+            <a  onclick="gotoPageIndex(2)" class="page-item" data-page="2">2</a>
+            <a  onclick="gotoPageIndex(3)" class="page-item" data-page="3">3</a>
+            <a  onclick="gotoPageIndex(4)" class="page-item" data-page="4">4</a>
+            <a  onclick="gotoPageIndex(4)" class="page-item" data-page="5">5</a>
+            <a  onclick="gotoPageIndex(4)" class="page-item" data-page="6">6</a>
+            <a  onclick="gotoPageIndex(4)" class="page-item" data-page="7">7</a>
+          
+            <a  class="button-pagbreak button-pagbreak-next " id="_pgNextPage" onclick="gotoPageIndex(1)"
+               data-page="4">
+                <span class="material-symbols-outlined">
+                    chevron_right
+                </span>
+            </a>
         </div>
     </div>
 

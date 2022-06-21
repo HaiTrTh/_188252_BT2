@@ -46,7 +46,10 @@
 
         public List<string> Product_trademark { get; set; }
         public List<string> Product_size { get; set; }
+        public string totalPage { get; set; }
 
+        public string pageNumber { get; set; }
+        
         public string orderType { get; set; }
 
 

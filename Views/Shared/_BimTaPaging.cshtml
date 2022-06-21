@@ -7,7 +7,7 @@
 @model List<_188252_BT2.Models.Product>
 
 <div class="row">
-    @foreach (var item in @Model.Take(8))
+    @foreach (var item in @Model.Take(10))
     {
         @await Component.InvokeAsync("BimTaBoxes",item.Product_Id)
     }

@@ -104,11 +104,45 @@
                 });
             }
 
-           
+            for (int index = 26; index <= 30; index++)
+            {
+                ListBimTas.Add(new Product()
+                {
+                    Product_Id = index,
+                    Product_Name = "Tã quần Goo.n  size XL miếng (9 - 14 kg)",
+                    Product_Price = 30000 * (index - 25),
+                    Product_OldPrice = 38000 * (index - 25),
+                    Product_DegreePercent = 10,
+                    Product_Img = "https://cdn.tgdd.vn/Products/Images/2427/85714/ta-quan-goon-friend-pants-size-l-52-mieng-9-14kg-600x600.png",
+                    ProductDetail = new ProductDetailModel()
+                    {
+                        product_trademark = "Goon",
+                        product_size = "XL",
+                        product_type = "Tã quần"
+                    }
+                });
+            }
+
+            for (int index = 31; index <= 60; index++)
+            {
+                ListBimTas.Add(new Product()
+                {
+                    Product_Id = index,
+                    Product_Name = "Tã quần IQ.baby  size XL miếng (9 - 14 kg)",
+                    Product_Price = 30000 * (index - 30),
+                    Product_OldPrice = 38000 * (index - 30),
+                    Product_DegreePercent = 10,
+                    Product_Img = "https://cdn.tgdd.vn/Products/Images/2427/259197/ta-dan-so-sinh-iqbaby-size-s3-2-cai-bich-cho-be-6-9-thang-mau-ngau-nhien-600x600.jpg",
+                    ProductDetail = new ProductDetailModel()
+                    {
+                        product_trademark = "IQBaby",
+                        product_size = "XL",
+                        product_type = "Tã quần"
+                    }
+                });
+            }
 
 
-
-          
             return ListBimTas;
         }
 

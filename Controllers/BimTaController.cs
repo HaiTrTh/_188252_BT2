@@ -1,6 +1,7 @@
 ﻿using _188252_BT2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using PagedList;
 using System.Linq;
 
 
@@ -9,13 +10,13 @@ namespace _188252_BT2.Controllers
     public class BimTaController : Controller
     {
         private List<Product> productsSearchedBrand;
-       
-        
+
+
         public IActionResult Index()
         {
-            
+
             var listbimta = new ListBimTaModel().initBimTa();
-            
+
             return View(listbimta);
         }
         public IActionResult RenderTrademark()
@@ -24,28 +25,19 @@ namespace _188252_BT2.Controllers
             return View(listTrademark);
         }
 
-        //public ActionResult Toy(string searchedBrand)
-        //{
-        //    var products = dataBimta.initBimTa();
 
-        //    if (searchedBrand != null)
-        //    {
-        //        products = (from product in products
-        //                    where product.ProductDetail.product_trademark == searchedBrand.Trim()
-        //                    select product).ToList();
-        //    }
-        //    return View(products);
-        //}
 
         public IActionResult LoadBimTa(List<Product> BimTaList)
         {
             return PartialView("_BimTaFilter", BimTaList);
         }
 
+
+
         [HttpGet]
-        public IActionResult SearchFilter(string jsonprd) 
+        public IActionResult SearchFilter(string jsonprd)
         {
-           
+
             QuerySearch? qry = JsonConvert.DeserializeObject<QuerySearch>(jsonprd);
 
             var products = new ListBimTaModel().initBimTa();
@@ -61,7 +53,7 @@ namespace _188252_BT2.Controllers
                                              || qry.Product_size.Contains(product.ProductDetail.product_size)
                                              select product).ToList();
                 }
-                   
+
             }
             catch (ArgumentNullException)
             {
@@ -99,6 +91,15 @@ namespace _188252_BT2.Controllers
                         productsSearchedBrand = productsSearchedBrand.ToList();
                         break;
                 }
+
+              
+
+                string pageSize = qry.totalPage;
+                string pageNumberCur = (qry.pageNumber ?? "1");
+
+                productsSearchedBrand = productsSearchedBrand.Skip(Int32.Parse(pageSize) * (Int32.Parse(pageNumberCur) - 1)).Take(10).ToList();
+              
+              
             }
             catch (ArgumentNullException)
             {
@@ -111,6 +112,6 @@ namespace _188252_BT2.Controllers
             });
             return Json(value);
         }
-
+   
     }
 }

@@ -44,11 +44,6 @@ $('.filter-item.filter-price').click(function () {
 
 })
 
-//$('.filter-item.filter-type').click(function () {
-//    $('.filter-item.filter-type').toggleClass("active")
-//    $('.filter-item.filter-type .filter-show').toggleClass("active");
-
-//})
 
 $('.filter-item.filter-weight').click(function () {
     $('.filter-item.filter-weight').toggleClass("active")
@@ -69,11 +64,17 @@ var filtersBrand = [];
 var filtersType = [];
 var filtersSize = [];
 var sortSelected = "";
+
 var prd = {
     Product_trademark: [],
     Product_type: [],
     Product_size: [],
-    orderType: ""
+    orderType: "",
+
+    pageNumber: "",
+    totalPage: "",
+
+
 };
 
 
@@ -108,7 +109,7 @@ function showFilterItem1(obj) {
 
 
 
-// sort filter
+// sort 
 $(document).ready(function () {
     $('.sort').click(function () {
         prd.orderType = $(this).attr('data-name');
@@ -173,7 +174,7 @@ $(document).ready(function () {
     })
 });
 
-
+//filter
 $(document).ready(function () {
     $('.btn-filter-readmore').click(function () {
         prd.Product_trademark = filtersBrand;
@@ -205,3 +206,72 @@ $(document).ready(function () {
 });
 
 
+
+
+// paging 
+$(document).ready(function () {
+    $('.page-item').click(function () {
+        prd.totalPage = $('.pagbreak').attr('data-total-page');
+        prd.pageNumber = $(this).attr('data-page');
+
+
+
+        console.log("Total _pgNextPage: " + prd._pgNextPage)
+        console.log("Total _pgPreviousPage: " + prd._pgPreviousPage)
+        console.log("Total page: " + prd.totalPage)
+        console.log("Total pageActive: " + prd.pageActive)
+
+        var myJsonProduct = JSON.stringify(prd);
+
+        $.ajax({
+            url: '/BimTa/OrderFilter',
+            type: 'GET',
+            data: {
+                jsonprd: myJsonProduct
+            },
+            dataType: 'json',
+            contentType: 'application/json;charset=utf-8',
+            success: function (response) {
+                var data = JSON.parse(response);
+                $('#list_bimta_grid').load('/BimTa/LoadBimTa', {
+                    BimTaList: data,
+                });
+            },
+            error: function () {
+            }
+        })
+    })
+});
+
+
+
+// function gotoPageIndex(index) {
+//        let tem = 0;
+//        var page = document.getElementsByClassName("page-item active")[0];
+//        tem = $(page).attr('data-page');
+
+//        if (index == 1) {
+//            tem;
+//        }
+//        if (index == -1) {
+
+//            tem = tem - 1;
+
+//            alert("tem: " + tem);
+
+//        }
+
+
+//        var pages = document.getElementsByClassName("page-item");
+//        for (let pg of pages) {
+//            pg.classList.remove("active");
+//        }
+//        for (let dem = 0; dem < 4; dem++) {
+//            if (dem == tem) {
+//                pages[dem].classList.add("active");
+//            }
+//        }
+
+//        getproduct();
+
+//}
