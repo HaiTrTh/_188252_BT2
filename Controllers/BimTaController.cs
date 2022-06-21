@@ -97,7 +97,7 @@ namespace _188252_BT2.Controllers
                 string pageSize = qry.totalPage;
                 string pageNumberCur = (qry.pageNumber ?? "1");
 
-                productsSearchedBrand = productsSearchedBrand.Skip(Int32.Parse(pageSize) * (Int32.Parse(pageNumberCur) - 1)).Take(10).ToList();
+                productsSearchedBrand =  productsSearchedBrand.Skip(Int32.Parse(pageSize) * (Int32.Parse(pageNumberCur) - 1)).Take(10).ToList();
               
               
             }
